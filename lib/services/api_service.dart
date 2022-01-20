@@ -1,22 +1,56 @@
 import 'dart:convert';
-
+import 'dart:html';
 import 'package:flutter_restapi/models/cases.dart';
 import 'package:http/http.dart';
 
 class ApiService {
-  final String apiUrl = "http://192.168.0.7:3000/api";
+  final String apiUrl =
+      "http://114.4.37.148/bukutamu/index.php/daftartamu/simpan";
+  final String apiUrl2 =
+      "http://114.4.37.148/bukutamu/index.php/daftartamu/getlist";
 
+  // Future<List> getPopularMovies() async {
+  //   final String uri = apiUrl2;
+
+  //    var http;
+  //   var res = await http.post(apiUrl2);
+  //   if (res.statusCode == HttpStatus.ok) {
+  //     print("Sukses");
+  //     final jsonResponse = json.decode(res.body);
+  //     final moviesMap = jsonResponse['results'];
+  //     List movies = moviesMap.map((i) => Cases.fromJson(i)).toList();
+  //     return movies;
+  //   } else {
+  //     print("Fail");
+  //     return null;
+  //   }
+  // }
   Future<List<Cases>> getCases() async {
-    Response res = await get(apiUrl);
-
+    var http;
+    var res = await http.post(apiUrl);
+    print(res.body);
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
-      List<Cases> cases = body.map((dynamic item) => Cases.fromJson(item)).toList();
+      List<Cases> cases =
+          body.map((dynamic item) => Cases.fromJson(item)).toList();
+      return cases;
+    } else {
+      throw "Failed to load cases list";
+    }
+  }Future<List<Cases>> getCasesList() async {
+    var http;
+    var res = await http.post(apiUrl2);
+    print(res.body);
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+      List<Cases> cases =
+          body.map((dynamic item) => Cases.fromJson(item)).toList();
       return cases;
     } else {
       throw "Failed to load cases list";
     }
   }
+
 
   Future<Cases> getCaseById(String id) async {
     final response = await get('$apiUrl/$id');
@@ -30,13 +64,13 @@ class ApiService {
 
   Future<Cases> createCase(Cases cases) async {
     Map data = {
-      'name': cases.name,
-      'gender': cases.gender,
-      'age': cases.age,
-      'address': cases.address,
-      'city': cases.city,
-      'country': cases.country,
-      'status': cases.status
+      'nama': cases.nama,
+      'alamat': cases.alamat,
+      'instansi': cases.instansi,
+      'email': cases.email,
+      'telp': cases.telp,
+      'tujuan': cases.tujuan,
+      'keterangan': cases.keterangan
     };
 
     final Response response = await post(
@@ -55,13 +89,13 @@ class ApiService {
 
   Future<Cases> updateCases(String id, Cases cases) async {
     Map data = {
-      'name': cases.name,
-      'gender': cases.gender,
-      'age': cases.age,
-      'address': cases.address,
-      'city': cases.city,
-      'country': cases.country,
-      'status': cases.status
+      'nama': cases.nama,
+      'alamat': cases.alamat,
+      'instansi': cases.instansi,
+      'email': cases.email,
+      'telp': cases.telp,
+      'tujuan': cases.tujuan,
+      'keterangan': cases.keterangan
     };
 
     final Response response = await put(
@@ -87,5 +121,4 @@ class ApiService {
       throw "Failed to delete a case.";
     }
   }
-
 }

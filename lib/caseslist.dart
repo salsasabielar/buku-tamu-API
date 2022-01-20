@@ -25,8 +25,8 @@ class CasesList extends StatelessWidget {
                     },
                     child: ListTile(
                       leading: Icon(Icons.person),
-                      title: Text(cases[index].name),
-                      subtitle: Text(cases[index].age.toString()),
+                      title: Text(cases[index].nama),
+                      // subtitle: Text(cases[index].age.toString()),
                     ),
                   )
               );

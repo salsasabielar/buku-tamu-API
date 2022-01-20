@@ -36,97 +36,97 @@ class _DetailWidgetState extends State<DetailWidget> {
                         margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                         child: Column(
                           children: <Widget>[
-                            Text('Name:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
-                            Text(widget.cases.name, style: Theme.of(context).textTheme.title)
+                            Text('nama:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
+                            Text(widget.cases.nama, style: Theme.of(context).textTheme.title)
                           ],
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          children: <Widget>[
-                            Text('Gender:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
-                            Text(widget.cases.gender, style: Theme.of(context).textTheme.title)
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          children: <Widget>[
-                            Text('Age:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
-                            Text(widget.cases.age.toString(), style: Theme.of(context).textTheme.title)
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          children: <Widget>[
-                            Text('Address:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
-                            Text(widget.cases.address, style: Theme.of(context).textTheme.title)
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          children: <Widget>[
-                            Text('City:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
-                            Text(widget.cases.city, style: Theme.of(context).textTheme.title)
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          children: <Widget>[
-                            Text('Country:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
-                            Text(widget.cases.country, style: Theme.of(context).textTheme.title)
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          children: <Widget>[
-                            Text('Status:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
-                            Text(widget.cases.status, style: Theme.of(context).textTheme.title)
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          children: <Widget>[
-                            Text('Update Date:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
-                            Text(widget.cases.updated, style: Theme.of(context).textTheme.title)
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: Column(
-                          children: <Widget>[
-                            RaisedButton(
-                              splashColor: Colors.red,
-                              onPressed: () {
-                                _navigateToEditScreen(context, widget.cases);
-                              },
-                              child: Text('Edit', style: TextStyle(color: Colors.white)),
-                              color: Colors.blue,
-                            ),
-                            RaisedButton(
-                              splashColor: Colors.red,
-                              onPressed: () {
-                                _confirmDialog();
-                              },
-                              child: Text('Delete', style: TextStyle(color: Colors.white)),
-                              color: Colors.blue,
-                            )
-                          ],
-                        ),
-                      ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       Text('Gender:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
+                      //       Text(widget.cases.gender, style: Theme.of(context).textTheme.title)
+                      //     ],
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       Text('Age:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
+                      //       Text(widget.cases.age.toString(), style: Theme.of(context).textTheme.title)
+                      //     ],
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       Text('Address:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
+                      //       Text(widget.cases.address, style: Theme.of(context).textTheme.title)
+                      //     ],
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       Text('City:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
+                      //       Text(widget.cases.city, style: Theme.of(context).textTheme.title)
+                      //     ],
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       Text('Country:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
+                      //       Text(widget.cases.country, style: Theme.of(context).textTheme.title)
+                      //     ],
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       Text('Status:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
+                      //       Text(widget.cases.status, style: Theme.of(context).textTheme.title)
+                      //     ],
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       Text('Update Date:', style: TextStyle(color: Colors.black.withOpacity(0.8))),
+                      //       Text(widget.cases.updated, style: Theme.of(context).textTheme.title)
+                      //     ],
+                      //   ),
+                      // ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       RaisedButton(
+                      //         splashColor: Colors.red,
+                      //         onPressed: () {
+                      //           _navigateToEditScreen(context, widget.cases);
+                      //         },
+                      //         child: Text('Edit', style: TextStyle(color: Colors.white)),
+                      //         color: Colors.blue,
+                      //       ),
+                      //       RaisedButton(
+                      //         splashColor: Colors.red,
+                      //         onPressed: () {
+                      //           _confirmDialog();
+                      //         },
+                      //         child: Text('Delete', style: TextStyle(color: Colors.white)),
+                      //         color: Colors.blue,
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   )
               )
@@ -136,12 +136,12 @@ class _DetailWidgetState extends State<DetailWidget> {
     );
   }
 
-  _navigateToEditScreen (BuildContext context, Cases cases) async {
-    final result = await Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => EditDataWidget(cases)),
-    );
-  }
+  // _navigateToEditScreen (BuildContext context, Cases cases) async {
+  //   final result = await Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => EditDataWidget(cases)),
+  //   );
+  // }
 
   Future<void> _confirmDialog() async {
     return showDialog<void>(
